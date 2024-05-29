@@ -8,3 +8,9 @@ dist
 .env*
 
 # Logs
+
+# lib
+td
+
+# DB
+/neo4j_db

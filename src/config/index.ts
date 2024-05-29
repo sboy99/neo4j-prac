@@ -1,14 +1,15 @@
-import { getEnv } from "@/utils";
+import { getEnv, getEnvInt } from "@/utils/get-env";
+import { TConfig } from "@/types/global";
 import * as dotenv from "dotenv";
 
 // Load environment variables from .env file, where API keys and passwords are configured
 dotenv.config();
-const MORALIS_API_KEY = getEnv("MORALIS_API_KEY");
-const MORALIS_WEBHOOK_URL = getEnv("MORALIS_WEBHOOK_URL");
 
 // -------------------------------PUBLIC--------------------------------- //
 
-export const config = {
-  MORALIS_API_KEY,
-  MORALIS_WEBHOOK_URL,
+export const config: TConfig = {
+  NODE_ENV: getEnv("NODE_ENV"),
+  NEO4J_URI: getEnv("NEO4J_URI"),
+  NEO4J_USERNAME: getEnv("NEO4J_USERNAME"),
+  NEO4J_PASSWORD: getEnv("NEO4J_PASSWORD"),
 };
